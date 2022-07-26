@@ -20,19 +20,14 @@ posts = {
     "https://pbs.twimg.com/media/FI_UkcnVIAAUvWN?format=jpg&name=medium": "2020 cohort in their Y1 summer!"}
 
 keys= posts.keys()
-index=0
-captions=[]
-for i in keys:
-    caption = posts[i]
-    captions.append(caption)
-    index +=1
+
 
 #####
 
 
 @app.route('/')  # '/' for the default page
 def home():
-    return render_template('index.html', image_link=image_link, bio=user_bio, posts=posts, keys=keys, index=index)
+    return render_template('index.html', image_link=image_link, bio=user_bio, posts=posts, keys=keys)
 
 
 @app.route('/about')  # '/' for the default page
